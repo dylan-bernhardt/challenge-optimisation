@@ -19,13 +19,11 @@ for file in os.listdir("../instances/"):
     f.close()
 '''  
 
-room = read_file.Room("../instances/gr15.txt")
-instance = 15
-l = algo_max.algo_max(room)
-print(f"{len(l)}")
-f= open("../res/res-gr15.txt","w")
+room = read_file.Room("../instances/gr14.txt")
+instance = 14
+f= open("../res/res-gr14.txt","w")
 f.write("EQUIPE 22\n")
-f.write("INSTANCE 15\n")
+f.write("INSTANCE 14\n")
 for surv in l :
     f.write(f"{surv[0]} {surv[1]}\n")
 f.close()
