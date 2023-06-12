@@ -1,5 +1,6 @@
 import algo_naif
 import read_file
+import random
 
 
 
@@ -16,6 +17,7 @@ def algo_max(Room : read_file.Room) -> list :
 
 
 def best_placement(Room : read_file.Room)->dict :
+    buffer = []
     d = {"i" : 0, "j": 0, "cible" : []}
     for i in range(Room.lignes) :
         for j in range(Room.colonnes) :
@@ -23,9 +25,16 @@ def best_placement(Room : read_file.Room)->dict :
                 l = algo_naif.couvre(Room, i, j)
                 if len(l)>=len(d["cible"]) :
                     d["i"],d["j"],d["cible"] = i,j, l
+        
+    for i in range(Room.lignes) :
+        for j in range(Room.colonnes) :
+            if Room.cases[i][j].type != "OBSTACLE" :
+                l = algo_naif.couvre(Room, i, j)
+                if len(l)==len(d["cible"]) :
+                    buffer.append({"i" : i, "j" : j, "cible" : l})
+    
+    rand = random.randrange(0,len(buffer))
+    d = buffer[rand]
     return d
-
-room = read_file.Room("../instances/gr1.txt")
-room.print_room()
 
 
