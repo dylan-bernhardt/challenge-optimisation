@@ -1,9 +1,10 @@
 import os
 
+
 class Case :
-    def __init__(self, type_arg: str, x: int, y: int) -> None :
-        self.x = x
-        self.y = y
+    def __init__(self, type_arg: str, i: int, j: int) -> None :
+        self.i = i
+        self.j = j
         self.marked = 0
         self.type=type_arg
 
