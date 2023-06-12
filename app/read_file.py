@@ -21,6 +21,7 @@ class Room :
         for line in lines :
             _type, x, y = line.split()[0],int(line.split()[1]),int(line.split()[2])
             self.cases[x][y].type = _type
+        f.close()
     def print_room(self)->None:
         for i in range(self.lignes) :
             print("\n")

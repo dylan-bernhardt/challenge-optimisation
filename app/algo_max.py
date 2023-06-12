@@ -25,3 +25,4 @@ def best_placement(Room : read_file.Room)->dict :
                     d["i"],d["j"],d["cible"] = i,j, l
     return d
 
+
