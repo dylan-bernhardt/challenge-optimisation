@@ -40,5 +40,11 @@ class Room :
                 
                 if(self.cases[i][j].type == "CIBLE"):
                     print(1, end=" ")
-                
+    def get_nb_of_cible(self) :
+        k=0
+        for i in range(self.lignes):
+            for j in range(self.colonnes) : 
+                if self.cases[i][j].type == "CIBLE" :
+                    k+=1
+        return k
 
