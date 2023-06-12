@@ -41,11 +41,3 @@ def couvre(Room : read_file.Room, i:int, j:int)->list :
             l.append(Room.cases[ii][jj])
         ii-=1
     return l
-
-'''
-for file in os.listdir("../instances/") :
-    room = read_file.Room("../instances/" + file)
-    print(file + ":", end = " ")
-    print(len(algo_naif(room)))
-
-'''
