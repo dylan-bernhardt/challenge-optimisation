@@ -1,4 +1,5 @@
 import os
+from termcolor import colored
 
 
 class Case :
@@ -34,13 +35,14 @@ class Room :
             print("\n")
             for j in range(self.colonnes): 
                 if(self.cases[i][j].type == "OBSTACLE"):
-                    print(2, end=" ")
+                    print(colored("2", "white"), end=" ")
                 
                 if(self.cases[i][j].type == "NORMAL"):
-                    print(0, end=" ")
+                    print(colored("0", "black"), end=" ")
                 
                 if(self.cases[i][j].type == "CIBLE"):
-                    print(1, end=" ")
+                    print(colored("1", "red"), end =" ")
+        print("\n\n")
     def get_nb_of_cible(self) :
         k=0
         for i in range(self.lignes):

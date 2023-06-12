@@ -21,8 +21,11 @@ def best_placement(Room : read_file.Room)->dict :
         for j in range(Room.colonnes) :
             if Room.cases[i][j].type != "OBSTACLE" :
                 l = algo_naif.couvre(Room, i, j)
-                if len(l)>len(d["cible"]) :
+                if len(l)>=len(d["cible"]) :
                     d["i"],d["j"],d["cible"] = i,j, l
     return d
+
+room = read_file.Room("../instances/gr1.txt")
+room.print_room()
 
 
