@@ -1,3 +1,5 @@
+import os
+
 class Case :
     def __init__(self, type_arg: str, x: int, y: int) -> None :
         self.x = x
@@ -23,6 +25,19 @@ class Room :
             print("\n")
             for j in range(self.colonnes): 
                 print(self.cases[i][j].type, end=" ")
-room = Room("../instances/gr1.txt")
-room.print_room()
+
+        print("\n\n\n")
+        
+        for i in range(self.lignes) :
+            print("\n")
+            for j in range(self.colonnes): 
+                if(self.cases[i][j].type == "OBSTACLE"):
+                    print(2, end=" ")
+                
+                if(self.cases[i][j].type == "NORMAL"):
+                    print(0, end=" ")
+                
+                if(self.cases[i][j].type == "CIBLE"):
+                    print(1, end=" ")
+                
 
